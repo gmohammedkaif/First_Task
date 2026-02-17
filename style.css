@@ -737,6 +737,9 @@ header {
 .footer-right {
     display: flex;
     gap: 60px;
+    flex-wrap: wrap;
+    height:'100%';
+    max-height: auto;
 }
 
 .footer-right h3 {
