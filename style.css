@@ -736,6 +736,7 @@ header {
 
 .footer-right {
     display: flex;
+    justify-content: center;
     gap: 60px;
     flex-wrap: wrap;
     height:'100%';
