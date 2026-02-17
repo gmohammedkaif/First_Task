@@ -9,18 +9,23 @@ body {
     width: 100%;
     height: 100%;
     font-family: "Urbanist", sans-serif;
+    background-color: #141414;
+
+
 
 }
 
 header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 60px;
     background-color: #1A1A1A;
     color: white;
     align-items: center;
     position: sticky;
     top: 0;
+    z-index: 1000;
+    padding: 0 60px;
 }
 
 .logo {
@@ -35,10 +40,6 @@ header {
     height: 28px;
 }
 
-nav li {
-    list-style: none;
-}
-
 .navbar nav {
     display: flex;
     justify-content: space-between;
@@ -48,14 +49,23 @@ nav li {
 .navbar a {
     text-decoration: none;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.nav-home {
+    background-color: #141414;
+    border: 1px solid #262626;
+    padding: 8px 12px;
+    border-radius: 8px;
 }
 
 .nav-btn button {
     background-color: #141414;
     color: white;
     padding: 10px 14px;
-    border: 1px solid black;
+    border: 1px solid #262626;
     border-radius: 10px;
     gap: 8px;
 }
@@ -63,26 +73,43 @@ nav li {
 .hero {
     display: flex;
     justify-content: space-between;
+    position: relative;
     /* background: linear-gradient(238.21deg, #2A213F 8.76%, rgba(25, 25, 25, 0) 50.09%); */
 
 }
 
-.left {
+.hero-center-logo {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.hero-center-logo img {
+    width: 135px;
+    height: 135px;
+}
+
+
+.hero-left {
     background-color: #141414;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     min-width: 50%;
-    gap: 20px;
+    padding: 100px;
+    gap: 32px;
+    position: relative;
 }
 
 .hero-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 26px;
 }
 
 .hero-text h1 {
@@ -94,7 +121,7 @@ nav li {
 .hero-text p {
     font-weight: 500;
     line-height: 150%;
-    font-size: 10px;
+    font-size: 14px;
 
 }
 
@@ -126,16 +153,17 @@ nav li {
     border: none;
 }
 
-.right {
+.hero-right {
     display: flex;
     justify-content: center;
     align-items: center;
     min-width: 50%;
 }
 
-.right img {
+.hero-right img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    object-fit: cover;
 
 
 }
@@ -180,7 +208,8 @@ nav li {
 }
 
 .cards {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 200px;
     background-color: #1A1A1A;
     border: 1px solid #262626;
@@ -217,7 +246,7 @@ nav li {
 
 .hero2-text {
     font-family: Urbanist;
-    width: 80%;
+    /* width: 80%; */
 
 }
 
@@ -229,7 +258,8 @@ nav li {
     flex-direction: column;
     align-items: center;
     padding: 15px;
-    width: 30%;
+    /* width: 30%; */
+    flex: 1;
 }
 
 .hero2-imgg img {
@@ -279,7 +309,6 @@ nav li {
 
 .icon {
     display: flex;
-
     background-color: #1A1A1A;
     color: white;
     padding: 6px 10px;
@@ -299,12 +328,16 @@ nav li {
     margin-top: 10px;
 }
 
-.icon button {
+.icon span {
     background-color: #1A1A1A;
     color: white;
     /* padding: 6px 10px; */
     border-radius: 22px;
-    border: none
+    border: none;
+    font-size: 12px;
+    align-items: center;
+    display: flex;
+
 }
 
 .feature-box1 {
@@ -330,15 +363,17 @@ nav li {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     background-color: #141414;
     min-height: 80vh;
+    gap: 50px;
 }
 
 .hero-3 h2 {
     color: white;
 }
-.hero-3 h4{
+
+.hero-3 h4 {
     color: white;
 }
 
@@ -346,38 +381,383 @@ nav li {
     color: #999999;
     font-size: 10px;
 }
-.person img{
+
+.person img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
-.person h4{
+
+.person h4 {
     color: white;
 }
-.hero-3-img{
+
+.hero-3-img {
     display: flex;
+    /* flex-direction: column; */
     justify-content: space-between;
+    background-color: #141414;
+    color: white;
+    border: 1px solid #262626;
+    align-items: center;
+    padding: 15px;
+    gap: 50px;
+    width: 80%;
+
 }
-.hero3-box{
+
+.hero3-box {
     background-color: #141414;
     border: 1px solid #262626;
     border-radius: 8px;
     padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.hero-3-text{
+
+.hero-3-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 80%;
+}
+
+.hero3-btn {
+    display: flex;
+    /* width: 80%; */
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero3-btn button {
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    color: white;
+    border-radius: 4px;
+    padding: 12px 16px;
+
+}
+
+.hero3-box .star {
+    height: 34px;
+    width: 200px;
+
+}
+
+.person {
+    display: flex;
+    gap: 10px;
+}
+
+.hero-4 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #141414;
+    color: white;
+    min-height: 80vh;
+    gap: 50px;
+}
+
+.hero-4 p {
+    color: #999999;
+    font-size: 12px;
+}
+
+.hero-4-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
     width: 80%;
 }
-.hero3-btn{
+
+.hero-4-img {
     display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    background-color: #141414;
+    color: white;
+    border: 1px solid #262626;
+    align-items: center;
+    padding: 15px;
+    gap: 50px;
     width: 80%;
+
+}
+
+.hero4-box {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 8px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hero4-btn {
+    display: flex;
+    /* width: 80%; */
     align-items: center;
     justify-content: space-between;
 }
-.hero-3-title{
+
+.hero4-btn button {
+    background-color: #1A1A1A;
+    border: 1px solid #262626;
+    color: white;
+    border-radius: 4px;
+    padding: 12px 16px;
+
+}
+
+.hero4-box button {
+    color: white;
+    background-color: #1A1A1A;
+    border: 1px solid #1A1A1A;
+    padding: 10px 8px;
+    border-radius: 7px;
+}
+
+.hero5 {
+    background-color: #141414;
     display: flex;
-    align-items: start;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(left-design.svg);
+    background-position: center;
+    object-fit: cover;
+    color: white;
+    padding: 0px 150px;
+    min-height: 30vh;
+
+}
+
+.hero5 button {
+    background-color: #703BF7;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 7px;
+    /* margin-right: 80px; */
+    border: none;
+}
+
+.hero5 h2 {
+    margin-bottom: 12px;
+}
+
+.hero5 p {
+    font-size: 12px;
+    color: #999999;
+}
+
+.footer {
+    background-color: #141414;
+    color: white;
+    border: none;
+    padding: 35px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.footer-right {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-right h3 {
+    color: #999999;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.footer-right h4 {
+    font-weight: 300;
+    font-size: 12px;
+    padding-top: 6px;
+}
+
+.footer-left img {
+    width: 28px;
+    height: 28px;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.footer-mail {
+    width: 100%;
+}
+
+.footer-mail input {
+    background-color: #141414;
+    border: 1px solid #262626;
+    padding: 12px 18px;
+    border-radius: 7px;
+    width: 100%;
+    max-width: 100%;
+    color: white;
+}
+
+.footer-mail input:focus {
+    outline: none;
+    border-color: #703BF7;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 14px;
+
+}
+
+.copyright {
+    /* text-align: center; */
+    color: white;
+    min-height: 8vh;
+    background-color: #1A1A1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.footer-icon {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-icon img {
+    width: 25px;
+    height: 25px;
+
+}
+
+.copyright {
+    padding: 0 80px;
+}
+
+
+@media (max-width: 768px) {
+
+    header {
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-left {
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-box {
+        flex-direction: column;
+    }
+
+    .hero-right img {
+        width: 100%;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero2-img {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero2-imgg {
+        width: 100%;
+    }
+
+    .hero-3-img,
+    .hero-4-img {
+        flex-direction: column;
+    }
+
+    .hero5 {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 16px;
+        gap: 32px;
+    }
+
+
+
+    .footer-right {
+        gap: 30px;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-left {
+        padding-left: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .hero-center-logo {
+        position: static;
+        transform: none;
+        margin: 30px auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-center-logo img {
+        width: 90px;
+        height: 90px;
+    }
+
 }
